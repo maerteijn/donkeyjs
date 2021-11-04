@@ -1,12 +1,4 @@
-# DonkeyJS
-A plain simple javascript component framework.
-
-
-Simple example:
-
-```javascript
-import Component from "donkeyjs/component"
-
+import Component from "../../../src/component.js"
 
 class HelloWorld extends Component {
   template(state) {
@@ -17,4 +9,3 @@ class HelloWorld extends Component {
 }
 
 export default HelloWorld
-```

@@ -1,0 +1,75 @@
+{
+  "name": "donkeyjs",
+  "version": "0.0.1",
+  "description": "A plain simple javascript component framework",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maerteijn/donkeyjs.git"
+  },
+  "author": "Martijn Jacobs",
+  "type": "module",
+  "license": "MIT",
+  "main": "demo/main.js",
+  "scripts": {
+    "dev": "webpack serve --mode=development --port 1234",
+    "build": "webpack --mode production",
+    "test": "mocha -r tests/setup_dom.js tests/",
+    "eslint": "eslint src/ tests/ demo/ --ext .js",
+    "eslint:fix": "eslint src/ tests/ demo/ --ext .js --fix",
+    "prettier": "prettier --check '{tests,src,demo}/**/*.js'",
+    "prettier:fix": "prettier --write '{tests,src,demo}/**/*.js'"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "~8",
+    "chai": "^4.3.4",
+    "eslint": "^8.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jsdom": "^18.0.1",
+    "jsdom-global": "^3.0.2",
+    "mocha": "~9",
+    "prettier": "^2.4.1",
+    "webpack": "~5",
+    "webpack-cli": "~4",
+    "webpack-dev-server": "~4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "es6": true,
+      "browser": true,
+      "mocha": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "no-console": "off"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "arrowParens": "avoid"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "esmodules": true
+          }
+        }
+      ]
+    ]
+  }
+}
