@@ -1,0 +1,66 @@
+{
+  "name": "slim-js-demo",
+  "version": "0.0.1",
+  "description": "A web component demo with slim-js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maerteijn/slim-js-demo.git"
+  },
+  "author": "Martijn Jacobs",
+  "type": "module",
+  "license": "MIT",
+  "main": "demo/main.js",
+  "scripts": {
+    "dev": "webpack serve --mode=development --port 1234",
+    "build": "webpack --mode production",
+    "test": "mocha -r tests/register_dom.js tests/",
+    "eslint": "eslint src/ tests/ src/ --ext .js",
+    "eslint:fix": "eslint src/ tests/ --ext .js --fix",
+    "prettier": "prettier --check '{tests,src}/**/*.js'",
+    "prettier:fix": "prettier --write '{tests,src}/**/*.js'"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "~8",
+    "chai": "^4.3.4",
+    "eslint": "^8.1.0",
+    "global-jsdom": "^8.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jsdom": "^18.0.1",
+    "mocha": "~9",
+    "prettier": "^2.4.1",
+    "webpack": "~5",
+    "webpack-cli": "~4",
+    "webpack-dev-server": "~4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true,
+      "es6": true,
+      "browser": true,
+      "mocha": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "no-console": "off"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "arrowParens": "avoid"
+  },
+  "dependencies": {
+    "slim-js": "^5.0.10"
+  }
+}
