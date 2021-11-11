@@ -3,7 +3,7 @@ A web component demo with slim-js
 
 ## Development requirements
 
-A recent LTS version of `NodeJS` (tested with v14.17).
+A recent  version of `NodeJS` (tested with v16.13).
 
 ## Development server
 
